@@ -9,4 +9,3 @@
 - [OutlanceNavbar](https://github.com/Iessenti/code-examples/blob/main/outlance-navbar.tsx) - react component of simple navbar
 - [RegistrationSchema](https://github.com/Iessenti/code-examples/blob/main/registration-schema.ts) - schema for validating registration form with "yup"
 - [SetProductToShelf Function](https://github.com/Iessenti/code-examples/blob/main/setProductToShelf.js) - function reducer from redux-toolkit for changing data flow of shelves with products. consider conditions that product is moved from one shelf to another or that product is moved from common list. this function also changes analytics of all products
-- 
