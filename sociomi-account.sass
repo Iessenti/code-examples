@@ -1,0 +1,575 @@
+.my-account-wrapper
+    position: relative
+
+    display: flex
+    flex-direction: column
+
+    right: 0
+    height: 100%
+    min-height: 100%
+    width: 100%
+    margin-left: auto
+
+    box-sizing: border-box
+    overflow: hidden
+
+    @media (max-width: 640px)
+        position: relative
+
+    &__inside-wrapper
+        position: relative
+        height: 100%
+        overflow-y: scroll
+        overflow-x: hidden
+        padding-bottom: 240px
+        &::-webkit-scrollbar
+            width: 6px
+            height: 5px
+            margin: 30px
+        &::-webkit-scrollbar-track
+            box-shadow: 0
+            border-radius: 5px
+            margin: 20px
+        &::-webkit-scrollbar-thumb
+            background: #219653
+            border-radius: 5px
+            height: 10%
+
+    &__full-data-container
+        position: relative
+        display: flex
+        flex-direction: column
+        margin: 0 25px
+
+        &__info-row
+            display: flex
+            flex-direction: row
+            align-items: center
+            justify-content: space-between
+            width: 100%
+            margin-top: 24px
+            @media (max-width: 640px)
+                margin-top: 0px
+                flex-direction: column
+
+            &__input-wrapper
+                width: calc(33% - 14px)
+                flex-direction: row
+                align-items: center
+                justify-content: space-between
+
+                position: relative
+                @media (max-width: 640px)
+                    width: 100%
+                    margin-top: 8px
+                .text-input
+                    min-width: 100%
+                    max-width: 100%
+                    display: flex
+                    position: relative
+                    input
+                        transition: all .3s ease
+                        min-width: 100%
+                    svg
+                        position: absolute
+                        right: 16px
+                        top: 8px
+                        z-index: 100
+                &__icon
+                    position: absolute
+                    bottom: 6px
+                    right: 24px
+                    cursor: pointer
+                    transition: transform .4s ease
+                .rotated
+                    transform: rotate(180deg)
+                    transition: transform .4s ease
+
+                &__top-info-panel
+                    display: flex
+                    flex-direction: row
+                    align-items: center
+
+                    margin-bottom: 8px
+                    svg
+                        margin-top: -8px
+                        position: relative
+                        opacity: 0.5
+                        @media screen and ( max-width: 640px )
+                            margin-top: 0px
+
+                    span
+                        margin-right: 10px
+                        font-family: Montserrat, sans-serif
+                        font-style: normal
+                        font-weight: normal
+                        font-size: 14px
+                        line-height: 17px
+                        color: #211E1E
+
+                        opacity: 0.5
+
+                &__toggle-list
+                    position: absolute
+                    display: flex
+                    flex-direction: column
+                    height: 0
+                    max-height: 120px
+
+                    padding: 0px 10px
+                    background: #FFFFFF
+
+                    width: 100%
+                    box-sizing: border-box
+                    z-index: 102
+                    border-radius: 0 0 12px 12px
+                    overflow: hidden
+                    transition: height .4s ease, padding .4s ease, border .3s ease
+                    & > span
+                        padding: 4px 10px
+                        width: 100%
+                        box-sizing: border-box
+                        transition: all .4s ease
+                        cursor: pointer
+                        border-radius: 4px
+                        font-family: Montserrat, sans-serif
+                        font-style: normal
+                        font-weight: normal
+                        font-size: 16px
+                        line-height: 20px
+                        color: #211E1E
+                        &:hover
+                            background: #f3f3f3
+                &__opened-list
+                    height: 66px
+                    transition: height .4s ease, padding .4s ease, border .3s ease
+                    padding: 4px 10px
+                    box-shadow: 4px 15px 8px 9px rgba(34, 60, 80, 0.08)
+
+                &__countries-opened-list
+                    height: fit-content
+                    max-height: 180px
+                    transition: height .4s ease, padding .4s ease, border .3s ease, max-height .4s ease
+                    padding: 4px 10px
+                    box-shadow: 4px 15px 8px 9px rgba(34, 60, 80, 0.08)
+                    overflow-y: scroll
+                    &::-webkit-scrollbar
+                        width: 6px
+                        height: 20px
+                        margin: 30px
+                    &::-webkit-scrollbar-track
+                        box-shadow: 0
+                        border-radius: 5px
+                        margin: 20px
+                    &::-webkit-scrollbar-thumb
+                        background: #219653
+                        border-radius: 5px
+                        height: 40%
+            &__mail-input-wrapper
+                @media (max-width: 640px)
+                    margin-top: 12px
+        .city-input-wrapper
+            position: absolute
+            right: 0
+            top: 200px
+            @media (max-width: 640px)
+                top: 440px
+    &__changing-login-modal
+        position: fixed
+        width: 566px
+        bottom: calc(50% - 110px)
+        right: calc(50% - 283px)
+        height: 220px
+
+        background: #FFFFFF
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+        border-radius: 12px
+
+        display: flex
+        flex-direction: column
+        align-items: center
+
+        box-sizing: border-box
+        padding: 12px 46px 64px 46px
+        z-index: 900
+        @media ( max-width: 640px )
+            position: fixed
+            width: calc(100vw - 30px)
+            height: -webkit-fit-content
+            height: -moz-fit-content
+            height: fit-content
+            right: 10px
+            padding: 12px 11px 20px
+            margin: 0 auto
+            top: unset
+            right: calc(50% - ((100vw - 30px)/2))
+            z-index: 99999
+            bottom: calc(50% - 150px)
+            // height: 100%
+            max-height: 300px
+        &__title
+            font-family: Montserrat, sans-serif
+            font-style: normal
+            font-weight: bold
+            font-size: 28px
+            line-height: 30px
+            color: #211E1E
+            max-width: 100%
+        &__desc
+            margin-top: 16px
+            width: 90%
+        .text-input
+            width: 90%
+            margin: 16px 0
+            input
+                border: 1px solid #d4d4d4
+
+        &__buttons
+            position: absolute
+            right: 12px
+            bottom: 12px
+            display: flex
+            flex-direction: row
+            align-items: center
+            justify-content: space-between
+            @media ( max-width: 640px )
+                position: relative
+                right: 0
+                bottom: 0
+            & > div
+                width: fit-content
+
+            & > .white-button
+                margin-right: 15px
+                @media ( max-width: 640px )
+                    //margin: 7px
+
+    &__finances-wrapper
+        box-sizing: border-box
+        padding: 0 25px 80px 25px
+        display: flex
+        flex-direction: column
+        height: fit-content
+        overflow-y: scroll
+        &::-webkit-scrollbar
+            width: 6px
+            height: 5px
+            margin: 30px
+        &::-webkit-scrollbar-track
+            box-shadow: 0
+            border-radius: 5px
+            margin: 20px
+        &::-webkit-scrollbar-thumb
+            background: #219653
+            border-radius: 5px
+            height: 10%
+
+    &__notifications-wrapper
+        box-sizing: border-box
+        padding: 0 25px 80px 25px
+        display: flex
+        flex-direction: column
+        height: fit-content
+        overflow-y: scroll
+
+        height: 100%
+        position: relative
+
+        &::-webkit-scrollbar
+            width: 6px
+            height: 5px
+            margin: 30px
+        &::-webkit-scrollbar-track
+            box-shadow: 0
+            border-radius: 5px
+            margin: 20px
+        &::-webkit-scrollbar-thumb
+            background: #219653
+            border-radius: 5px
+            height: 10%
+
+        &__title
+            font-family: Montserrat, sans-serif
+            font-style: normal
+            font-weight: 600
+            font-size: 14px
+            line-height: 20px
+            color: #000000
+        &__notifications-list
+            display: flex
+            flex-direction: row
+            flex-wrap: wrap
+
+            margin-top: 16px
+
+            @media (max-width: 640px)
+                flex-direction: column
+            & > div
+                margin-right: 20px
+                @media (max-width: 640px)
+                    margin: 15px 0 0 0
+
+            &__button
+                display: flex
+                flex-direction: row
+                justify-content: center
+                align-items: center
+                position: relative
+                width: 215px
+                background: #FFFFFF
+                background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='12' ry='12' stroke='rgba(33, 150, 83, 0.54)' stroke-width='2' stroke-dasharray='10%2c 10' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e")
+                box-sizing: border-box
+                border-radius: 12px
+
+                font-family: Montserrat, sans-serif
+                font-style: normal
+                font-weight: normal
+                font-size: 12px
+                line-height: 20px
+                color: #219653
+
+                cursor: pointer
+
+                box-sizing: border-box
+                padding: 12px 16px
+                max-height: 48px
+
+                text-align: center
+
+                transition: all .6s ease
+                @media (max-width: 640px)
+                    width: 200px
+
+                span
+                    margin-left: 24px
+
+                svg
+                    transform: scale(0.7)
+                    position: absolute
+                    left: 36px
+
+                &:hover
+                    background: rgba(33, 150, 83, 0.05)
+                    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='12' ry='12' stroke='rgba(33, 150, 83, 0.54)' stroke-width='2' stroke-dasharray='10%2c 10' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e")
+            &__panel
+                width: 215px
+                box-sizing: border-box
+                padding: 12px 16px
+                background: #FFFFFF
+                border-radius: 12px
+
+                font-family: Montserrat, sans-serif
+                font-style: normal
+                font-weight: normal
+                font-size: 12px
+                line-height: 24px
+                color: #211E1E
+
+                position: relative
+
+                @media (max-width: 640px)
+                    width: fit-content
+
+                    padding-right: 60px
+
+                &__edit-wrapper
+                    position: absolute
+                    bottom: -2px
+                    right: -4px
+
+                    height: 32px
+                    width: 32px
+                    border-radius: 50%
+                    background: #F7E38A
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    z-index: 998
+                    cursor: pointer
+                &__delete-wrapper
+                    position: absolute
+                    top: -8px
+                    right: 24px
+
+                    height: 32px
+                    width: 32px
+                    border-radius: 50%
+                    background: #E97474
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    z-index: 990
+                    cursor: pointer
+
+        &__modal
+            position: fixed
+            width: 566px
+            bottom: calc(50% - 110px)
+            right: calc(50% - 283px)
+
+            background: #FFFFFF
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+            border-radius: 12px
+
+            display: flex
+            flex-direction: column
+            align-items: center
+
+            box-sizing: border-box
+            padding: 12px 46px 64px 46px
+            z-index: 100
+            @media ( max-width: 640px )
+                position: fixed
+                width: calc(100vw - 30px)
+                height: -webkit-fit-content
+                height: -moz-fit-content
+                height: fit-content
+                right: 10px
+                padding: 12px 11px 20px
+                margin: 0 auto
+                top: unset
+                right: calc(50% - ((100vw - 30px)/2))
+                z-index: 99999
+                bottom: calc(50% - 150px)
+                // height: 100%
+                max-height: 300px
+            &__title
+                font-family: Montserrat, sans-serif
+                font-style: normal
+                font-weight: bold
+                font-size: 28px
+                line-height: 30px
+                color: #211E1E
+                max-width: 100%
+            & > div
+                display: flex
+                flex-direction: row
+                & > div
+                    margin-right: 20px
+                    margin-top: 20px
+            &__buttons
+                position: absolute
+                right: 12px
+                bottom: 12px
+                display: flex
+                flex-direction: row
+                align-items: center
+                justify-content: space-between
+                @media ( max-width: 640px )
+                    position: relative
+                    right: 0
+                    bottom: 0
+                & > div
+                    width: fit-content
+
+                & > .white-button
+                    margin-right: 15px
+                    @media ( max-width: 640px )
+                        //margin: 7px
+
+                .delete-button
+                    font-family: Open Sans, sans-serif
+                    font-style: normal
+                    font-weight: 600
+                    font-size: 16px
+                    line-height: 20px
+                    color: #FFFFFF
+                    box-sizing: border-box
+                    background: #E3655D
+                    padding: 10px 16px
+                    border-radius: 12px
+                    cursor: pointer
+                    transition: all .4s ease
+                    &:hover
+                        background: #d4554b
+            &__list
+                display: flex
+                flex-direction: column
+                width: 100%
+                background: #FAFAFA
+                border: 1px solid rgba(0, 0, 0, 0.2)
+                box-sizing: border-box
+                border-radius: 12px
+                min-height: 50px
+                margin: 15px 120px
+                font-family: Montserrat, sans-serif
+                font-style: normal
+                font-weight: 400
+                font-size: 14px
+                line-height: 24px
+                color: #211E1E
+                & > span
+                    margin: 14px 2px 4px 2px
+                    padding-left: 20px
+                    min-height: 24px
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.2)
+                & > div
+                    box-sizing: border-box
+                    padding: 3px 0
+                    overflow-y: auto
+                &__panel
+                    margin: 2px 12px
+                    box-sizing: border-box
+                    padding: 0.5px 12px
+                    border-radius: 8px
+                    cursor: pointer
+                    transition: all .4s ease
+                    &:hover
+                        background: rgba(0, 0, 0, 0.05)
+            &__delete-text
+                margin: 8px 0
+                font-family: Montserrat, sans-serif
+                font-style: normal
+                font-weight: 400
+                font-size: 17px
+                line-height: 24px
+                color: #211E1E
+    &__bottom-control-panel
+        position: absolute
+        bottom: 0px
+        right: 0px
+        display: flex
+        flex-direction: row
+        align-items: center
+
+        width: 100%
+        max-width: 100%
+        background: #FFFFFF
+        filter: drop-shadow(0px -2px 4px rgba(0, 0, 0, 0.1))
+
+        box-sizing: border-box
+        padding: 20px 20px 20px 0
+        z-index: 500
+        overflow: hidden
+        @media ( max-width: 640px )
+            justify-content: space-between
+            padding: 20px 16px
+            bottom: 0
+            margin-top: auto
+        &__buttons
+            display: flex
+            flex-direction: row
+            align-items: center
+            margin-left: auto
+            margin-right: 0
+            width: -webkit-fit-content
+            width: -moz-fit-content
+            width: 100%
+            min-width: 230px
+            justify-content: flex-end
+            @media ( max-width: 640px )
+                width: 100%
+                max-width: 100%
+                justify-content: space-between
+
+            .white-button
+                margin-right: 16px
+                @media ( max-width: 640px )
+            .green-button
+                max-width: fit-content
+                position: relative
+
+input[type="date"]::-webkit-calendar-picker-indicator
+    opacity: 0
+    -webkit-appearance: none
+    z-index: 150

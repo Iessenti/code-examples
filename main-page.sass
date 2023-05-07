@@ -1,0 +1,534 @@
+.main-page
+    display: flex
+    margin-top: 18px
+    .container
+        margin: auto
+        display: flex
+        flex-direction: column
+
+.main-page-search
+    display: flex
+    flex-direction: column
+    height: 332px
+    box-sizing: border-box
+    background: #fff
+    padding: 56px 0 72px 56px
+    border-radius: 12px
+    position: relative
+    &__title-text
+        margin: 0 0 24px 0
+        color: #13131C
+        font-family: als-font-60-variable
+        font-variation-settings: "wght" 500
+        font-size: 32px
+        line-height: 40px
+        a
+            background: linear-gradient(45deg, #2046FB 0%, #34ACFF 100%)
+            -webkit-background-clip: text
+            -webkit-text-fill-color: transparent
+            text-decoration: none
+            transition: all .2s ease-in-out
+            cursor: default
+            &:hover
+                color: #9BACFF
+
+    &--form
+        display: flex
+        flex-direction: row
+        align-items: center
+        justify-content: space-between
+        padding: 4px
+        height: 56px
+        min-height: 56px
+        width: 656px
+        transition: all .4s ease-in-out
+        border: 1px solid rgba(86, 123, 255, 0.24)
+        box-sizing: border-box
+        box-shadow: 0px 6px 28px -4px rgba(86, 123, 255, 0.04)
+        border-radius: 6px
+        background: #FFFFFF
+        z-index: 9999999
+        &__search-icon
+            width: 13.5px
+            height: 13.5px
+            position: relative
+            margin: 19.75px 15.75px 22.75px 20.75px
+
+        &__input
+            outline: none
+            border: none
+            background: transparent
+            width: 405px
+            color: #212126
+            font-family: als-font-60-variable
+            font-variation-settings: "wght" 400
+            font-size: 18px
+            line-height: 26px
+            transition: all .2s ease-in-out
+            &::placeholder
+                color: #9E9EB0
+                transition: all .2s ease-in-out
+            &:hover::placeholder
+                color: #BABACB!important
+            &:focus::placeholder
+                color: #BABACB!important
+
+        &__make-order-btn
+            background: linear-gradient(45deg, #2046FB 0%, #34ACFF 100%)
+            box-sizing: border-box
+            padding: 12px 24px
+            border-radius: 4px
+            font-family: als-font-60-variable
+            font-variation-settings: "wght" 500
+            font-size: 16px
+            line-height: 24px
+            color: #FFFFFF
+            overflow: hidden
+            outline: none
+            cursor: pointer
+            display: flex
+            flex-direction: row
+            align-items: center
+            position: relative
+            transition: all .2s ease-in-out
+            &:hover
+                opacity: 0.92
+            img
+                width: 16px
+                margin: 0 0 0 8px
+
+        &.focused
+            box-shadow: 0px 6px 28px -4px rgba(86, 123, 255, 0.04)
+            border: 1px solid #567BFF
+            border-radius: 6px 6px 0 0
+
+    &__labels-container
+        display: flex
+        flex-direction: row
+        margin-bottom: 72px
+        margin-top: 12px
+        z-index: 1
+        div
+            width: auto
+            min-height: 32px
+            height: 32px
+            background: rgba(230, 235, 255, 0.5)
+            border-radius: 4px
+            margin-right: 8px
+            padding: 4px 12px
+            font-family: als-font-60-variable
+            font-variation-settings: "wght" 400
+            font-size: 14px
+            line-height: 24px
+            color: #567BFF
+            cursor: pointer
+            transition: all 0.2s ease-in-out
+            &:hover
+                color: #6385FF
+                background: #E6EBFF
+
+    &__input-answers
+        z-index: 9999
+        div.scrollbar-container
+            flex-direction: column
+            z-index: 99999
+            opacity: 1
+            position: absolute
+            top: 186px
+            width: 656px
+            max-height: 408px
+            height: auto
+            display: block flex
+            border: 1px solid #567BFF
+            border-top: none
+            border-radius: 0 0 6px 6px
+            background-color: #fff
+            overflow: hidden
+            padding-top: 11px
+            transition: all .4s ease-in-out
+        &__element
+            height: 72px
+            width: 656px
+            min-height: 72px
+            padding: 12px 24px
+            cursor: pointer
+            display: flex
+            flex-direction: row
+            transition: all 0.2s ease-in-out
+            background: #ffffff
+            z-index: 999999
+            &:hover
+                background: #F8F8FF
+            &__img
+                width: 48px
+                height: 48px
+                border-radius: 6px
+                background-color: #EDF6FF
+                img
+                    width: 48px
+                    height: 48px
+                    object-fit: contain
+            &__info
+                display: flex
+                flex-direction: row
+                align-items: center
+                justify-content: space-between
+                margin-left: 16px
+                width: 100%
+
+                div
+                    display: flex
+                    flex-direction: column
+                    font-family: als-font-60-variable
+
+                    .title
+                        color: #3B3B45
+                        font-variation-settings: "wght" 500
+                        font-size: 18px
+                        line-height: 26px
+                    .type
+                        color: #9E9EB0
+
+    &::after
+        position: absolute
+        height: 332px
+        top: 0
+        right: 0
+        width: 606px
+        border-radius: 12px
+        content: ''
+        background: url('../images/main_page_bg.png') no-repeat
+        background-size: cover
+
+.searchTransition-enter
+    opacity: 0
+.searchTransition-enter-active
+    opacity: 1
+    transition: opacity .4s
+.searchTransition-exit
+    opacity: 1
+.searchTransition-exit-active
+    opacity: 0
+    transition: opacity .4s
+
+.main-page-popular
+    display: flex
+    flex-direction: column
+    background: #fff
+    margin-top: 24px
+    max-width: 1328px
+    height: 564px
+    border-radius: 12px
+    padding: 32px 56px
+    position: relative
+    &__header
+        font-family: als-font-60-variable
+        font-variation-settings: "wght" 500
+        font-size: 24px
+        line-height: 32px
+        color: #13131C
+
+    &__content
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+        padding-top: 28px
+        position: relative
+        &__element
+
+            height: 208px
+            min-width: 208px
+            margin-right: 6px
+            margin-left: 6px
+            margin-bottom: 16px
+            border-radius: 6px
+            padding: 20px 0 0 20px
+            overflow: hidden
+            cursor: pointer
+            transition: all .2s ease-in-out
+            position: relative
+            &__ripple
+                position: absolute
+                width: 100%
+                height: 100%
+                z-index: 20
+                margin-top: -20px
+                margin-left: -20px
+            &__title
+                font-family: als-font-60-variable
+                font-variation-settings: "wght" 500
+                font-size: 20px
+                line-height: 28px
+            &__type
+                font-family: als-font-60-variable
+                font-variation-settings: "wght" 400
+                font-size: 14px
+                line-height: 22px
+            &__img
+                position: absolute
+                img
+                    object-fit: contain
+
+            &:hover
+                opacity: 0.84
+
+.main-page-articles
+    display: flex
+    flex-direction: column
+    margin-top: 64px
+    height: 380px
+    &__header
+        font-family: als-font-60-variable
+        font-variation-settings: "wght" 500
+        line-height: 32px
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
+        height: 24px
+        span
+            font-size: 24px
+            color: #13131C
+        div
+            display: flex
+            flex-direction: row
+            align-items: center
+
+            transition: all .2s ease-in-out
+            cursor: pointer
+            height: 24px
+            span
+                color: #567BFF
+                text-decoration: none
+                font-size: 16px
+                text-align: center
+                margin-right: 8.67px
+                transition: all .2s ease-in-out
+                &:hover
+                    color: #7996FF
+            svg.right-light-arrow
+                transition: all 0.2s ease-in-out
+                margin-top: 2px
+                stroke: #567BFF
+                path
+                    fill: #567BFF
+            &:hover
+                span
+                    color: #7996FF
+                svg.right-light-arrow
+                    stroke: #7996FF
+                    path
+                        fill: #7996FF
+
+    &__content
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        margin-top: 24px
+        position: relative
+        &__article
+            display: flex
+            flex-direction: column
+            position: relative
+            height: 180px
+            width: 320px
+            cursor: pointer
+            transition: all .2s ease-in-out
+            p
+                font-family: als-font-60-variable
+                font-variation-settings: "wght" 500
+                font-size: 16px
+                line-height: 24px
+                color: #13131C
+                margin-top: 12px
+            span
+                font-family: als-font-60-variable
+                font-variation-settings: "wght" 400
+                font-size: 14px
+                line-height: 20px
+                color: #13131C
+                margin-top: 12px
+            &__info
+                display: flex
+                flex-direction: row
+                align-items: center
+                font-family: als-font-60-variable
+                font-variation-settings: "wght" 400
+                font-size: 14px
+                line-height: 20px
+                color: #3B3B45
+                height: 18px
+                min-height: 18px
+                text-align: center
+                margin-top: 4px
+                span
+                    margin: 0 12.67px 0 8.67px
+                    color: #3B3B45
+            &:hover
+                color: #60606B
+                opacity: 0.84
+
+.main-page-offers
+    position: relative
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    margin-bottom: 24px
+    &__light
+        position: absolute
+        height: 48px
+        width: 1296px
+        top: 14px
+        background: #72727A
+        border-radius: 6px
+        z-index: 1
+    &__dark
+        z-index: 12
+        width: 1328px
+        height: 56px
+        min-height: 56px
+        border-radius: 6px
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        transition: all 0.2s ease-in-out
+        align-items: center
+        padding: 16px 16px
+        overflow: hidden
+        cursor: pointer
+        position: relative
+        div
+            display: flex
+            flex-direction: row
+            img
+                height: 24px
+                width: 24px
+            span
+                text-align: center
+                font-family: als-font-60-variable
+                font-variation-settings: "wght" 500
+                font-size: 16px
+                line-height: 24px
+                color: #fff
+                margin-left: 12px
+
+        &__icon
+            position: relative
+            display: flex
+            justify-content: center
+            align-items: center
+            height: 28px
+            width: 28px
+            background: #ffffff
+            border-radius: 6px
+            z-index: 14
+            transition: all 0.2s ease-in-out
+            box-shadow: 0px 8px 18px -6px rgba(24, 39, 75, 0.12), 0px 12px 42px -4px rgba(24, 39, 75, 0.12)
+
+        &__runner
+            position: absolute
+            bottom: 0
+            left: 0
+            height: 2px
+            border-radius: 2px
+            background: linear-gradient(45deg, #2046FB 0%, #34ACFF 100%)
+
+.over
+    background: #2D2D37!important
+    width: 100%
+    height: 100%
+    z-index: 13
+
+.rcs-inner-handle
+    color: red
+
+.main-page-banner
+    width: 1328px
+    height: 240px
+    background: linear-gradient(45deg, #2046FB 0%, #34ACFF 100%)
+    border-radius: 12px
+    margin-bottom: 64px
+    margin-top: 64px
+    display: flex
+    flex-direction: row
+    overflow: visible
+    position: relative
+    padding: 40px 0 32px 56px
+    &__info
+        display: flex
+        flex-direction: column
+        width: 392px
+        font-family: als-font-60-variable
+        &__title
+            font-variation-settings: "wght" 500
+            font-size: 28px
+            line-height: 36px
+            color: #fff
+        &__text
+            margin-top: 8px
+            font-size: 16px
+            line-height: 24px
+            font-variation-settings: "wght" 400
+            color: #fff
+        &__buttons
+            display: flex
+            flex-direction: row
+            margin-top: 32px
+            div
+                border: 1px solid #FFFFFF
+                box-sizing: border-box
+                border-radius: 6px
+                margin-right: 8px
+                display: flex
+                justify-content: center
+                align-items: center
+                padding: 11px 27px 11px 27px
+                font-variation-settings: "wght" 500
+                font-size: 14px
+                line-height: 22px
+                font-feature-settings: 'calt' off
+                cursor: pointer
+                position: relative
+                transition: all .2s ease-in-out
+                &::first-child
+                    height: 20px
+                    width: 20px
+                span
+                    margin-left: 7.06px
+                    color: #fff
+                    // transition: all .2s ease-in-out 
+                &:hover
+                    background-color: rgba(255, 255, 255, 1)
+                &:hover span
+                    color: #2046FB
+
+    img
+        position: absolute
+        bottom: 0
+    &__mockup1
+        height: 248px
+        right: 50px
+        z-index: 900
+
+    &__mockup2
+        height: calc( 240px + 39.57px)
+        right: 12px
+        z-index: 899
+
+    &__ellipses
+        right: 0
+
+.curve-icon
+    transition: all 0.2s ease-in-out
+    stroke: #9E9EB0
+    path
+        fill: #9E9EB0
+.curve-icon.default
+    stroke: #9E9EB0
+    rect
+        fill: #9E9EB0
+.curve-icon.hovered
+    stroke: #567BFF
+    path
+        fill: #567BFF
